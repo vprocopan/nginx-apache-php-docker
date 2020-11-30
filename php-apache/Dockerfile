@@ -1,4 +1,4 @@
-FROM marcelosantoro/php-5.4.45-fpm
+FROM marcelosantoro/php-5.4.45-fpm:5.4.45-fpm
 RUN apt-get update
 # Install php extensions
 RUN docker-php-ext-install mysqli bcmath fpm cli gd intl opcache pdo pecl-imagick mbstring mcrypt mysql pecl-xdebug pgsql soap xml && docker-php-ext-enable mysqli bcmath fpm cli gd intl opcache pdo pecl-imagick mbstring mcrypt mysql pecl-xdebug pgsql soap xml
