@@ -2,9 +2,9 @@ FROM marcelosantoro/php-5.4.45-fpm:5.4.45-fpm
 RUN rpm -Uvh https://rpms.remirepo.net/enterprise/remi-release-7.rpm
 RUN yum update
 # Install php extensions
-RUN yum install -y yum-config-manager
+RUN yum install -y yum-config-manager php php-bcmath php-fpm php-cli php-gd php-intl php-opcache php-pdo php-pecl-imagick php-mbstring php-mcrypt php-mysql php-pecl-xdebug php-pgsql php-soap php-xml 
 RUN yum-config-manager --enable remi-php54
-RUN docker-php-ext-install mysqli bcmath fpm cli gd intl opcache pdo pecl-imagick mbstring mcrypt mysql pecl-xdebug pgsql soap xml && docker-php-ext-enable mysqli bcmath fpm cli gd intl opcache pdo pecl-imagick mbstring mcrypt mysql pecl-xdebug pgsql soap xml
+
 
 
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
