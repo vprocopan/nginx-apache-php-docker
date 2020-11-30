@@ -2,8 +2,9 @@ FROM marcelosantoro/php-5.4.45-fpm:5.4.45-fpm
 RUN rpm -Uvh https://rpms.remirepo.net/enterprise/remi-release-7.rpm
 RUN yum update
 # Install php extensions
-RUN yum install -y yum-config-manager php php-bcmath php-pecl-mongodb php-fpm php-cli php-gd php-intl php-opcache php-pdo php-pecl-imagick php-mbstring php-mcrypt php-mysql php-pecl-xdebug php-pgsql php-soap php-xml 
 RUN yum-config-manager --enable remi-php54
+RUN yum install -y yum-config-manager php php-bcmath php-pecl-mongodb php-fpm php-cli php-gd php-intl php-opcache php-pdo php-pecl-imagick php-mbstring php-mcrypt php-mysql php-pecl-xdebug php-pgsql php-soap php-xml 
+
 
 
 
