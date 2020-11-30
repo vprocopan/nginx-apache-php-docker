@@ -1,4 +1,5 @@
 FROM marcelosantoro/php-5.4.45-fpm:5.4.45-fpm
+RUN rpm -Uvh https://rpms.remirepo.net/enterprise/remi-release-7.rpm
 RUN yum update
 # Install php extensions
 RUN pecl install redis && docker-php-ext-enable redis
