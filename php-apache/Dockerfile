@@ -1,7 +1,7 @@
-FROM php:apache
+FROM marcelosantoro/php-5.4.45-fpm
 RUN apt-get update
 # Install php extensions
-RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+RUN docker-php-ext-install mysqli bcmath fpm cli gd intl opcache pdo pecl-imagick mbstring mcrypt mysql pecl-xdebug pgsql soap xml && docker-php-ext-enable mysqli bcmath fpm cli gd intl opcache pdo pecl-imagick mbstring mcrypt mysql pecl-xdebug pgsql soap xml
 RUN pecl install redis && docker-php-ext-enable redis
 
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
