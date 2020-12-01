@@ -1,5 +1,5 @@
 FROM yeszao/php:5.4.45-fpm-alpine
 RUN mkdir /edms
-COPY /edms /edms/
+COPY /edms/ /edms/
 WORKDIR /edms/
 CMD [ "php", "/edms/index.php" ]
