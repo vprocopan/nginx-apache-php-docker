@@ -1,12 +1,12 @@
 FROM yeszao/php:5.4.45-fpm-alpine
-RUN mkdir /edms
-COPY /edms/ /edms/
-RUN chown -R www-data:www-data /edms/
-WORKDIR /edms/
-ENV APACHE_DOCUMENT_ROOT /edms/
+RUN mkdir -p /var/www/edms
+COPY ./edms/ /var/www/edms
+RUN chown -R www-data:www-data /var/www/edms
+WORKDIR /var/www/edms
+ENV APACHE_DOCUMENT_ROOT /var/www/edms/
 
-#RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/httpd/conf/*.conf
-#RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/httpd/conf/httpd.conf /etc/httpd/conf.d/*.conf
+COPY ./conf/fcgid.conf /etc/httpd/conf.d/
+COPY ./conf/demo-docs.itsec.md.conf /etc/httpd/conf.d/
 
 CMD [ "php", "/edms/index.php" ]
 
