@@ -1,7 +1,9 @@
 FROM yeszao/php:5.4.45-fpm-alpine
 RUN apk update && apk upgrade
 
-RUN apk add -y php-common php-bcmath php-pecl-mongodb php-fpm php-cli php-gd php-intl php-opcache php-pdo php-pecl-imagick php-mbstring php-mcrypt php-mysql php-pecl-xdebug php-pgsql php-soap php-xml 
+#RUN apk add -y php-common php-bcmath php-pecl-mongodb php-fpm php-cli php-gd php-intl php-opcache php-pdo php-pecl-imagick php-mbstring php-mcrypt php-mysql php-pecl-xdebug php-pgsql php-soap php-xml 
+
+RUN docker-php-ext-install -j$(nproc) mysqli opcache bcmath pecl-mongodb fpm cli gd intl opcache pdo pecl-imagick mbstring mcrypt mysql pecl-xdebug pgsql soap xml 
 
 RUN mkdir -p /var/www/edms
 COPY ./edms/ /var/www/edms
