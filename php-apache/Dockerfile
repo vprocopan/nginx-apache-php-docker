@@ -8,7 +8,7 @@ ENV APACHE_DOCUMENT_ROOT /var/www/edms/
 COPY ./conf/fcgid.conf /etc/httpd/conf.d/
 COPY ./conf/demo-docs.itsec.md.conf /etc/httpd/conf.d/
 
-CMD [ "php", "/edms/index.php" ]
+CMD [ "php", "/var/www/edms/index.php" ]
 
 
 
