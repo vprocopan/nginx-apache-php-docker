@@ -2,7 +2,7 @@
 # http://localhost:8000/nginx-index.html
 # http://localhost:8000/apache-index.html
 # http://localhost:8000/index.php
-version: '3'
+version: '2'
 services:
   mysql-mariadb:
     build: './mysql'
