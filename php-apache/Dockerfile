@@ -1,7 +1,7 @@
 FROM yeszao/php:5.4.45-fpm-alpine
 RUN mkdir /edms
 COPY /edms/ /edms/
-RUN chown -R apache:apache /edms/
+RUN chown -R www-data:www-data /edms/
 WORKDIR /edms/
 ENV APACHE_DOCUMENT_ROOT /edms/
 
