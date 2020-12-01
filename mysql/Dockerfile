@@ -1,1 +1,2 @@
 FROM yobasystems/alpine-mariadb
+ENV MYSQL_ROOT_PASSWORD=hguyFtgfR4r9R4r76
